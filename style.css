@@ -1,0 +1,105 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 650px;
+    margin: auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 40px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.task-form, .filters {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+}
+
+.task-form input, .task-form select, .filters input, .filters select, button {
+    padding: 10px;
+    font-size: 14px;
+}
+
+#add-task {
+    background: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#add-task:hover {
+    background: #0056b3;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+    background: #fafafa;
+    transition: transform 0.2s ease, opacity 0.3s ease;
+}
+
+li.added {
+    animation: fadeIn 0.4s ease;
+}
+
+li.removed {
+    animation: fadeOut 0.3s ease forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; transform: translateX(0); }
+    to { opacity: 0; transform: translateX(20px); }
+}
+
+.completed {
+    text-decoration: line-through;
+    color: gray;
+}
+
+.overdue {
+    color: red;
+    font-weight: bold;
+}
+
+button.delete {
+    background: red;
+    color: white;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+}
+
+button.delete:hover {
+    background: darkred;
+}
+
+@media (max-width: 600px) {
+    .task-form, .filters {
+        flex-direction: column;
+    }
+}
